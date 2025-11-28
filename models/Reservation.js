@@ -31,7 +31,7 @@ const ReservationSchema = new Schema({
     timestamps: true
 });
 
-reservationSchema.index({ catway: 1 }); //  faster populate
-reservationSchema.index({catwayNumber: 1 }); // for faster recherche by catway number
+ReservationSchema.index({ catway: 1 }); //  faster populate
+ReservationSchema.index({catwayNumber: 1 }); // for faster recherche by catway number
 
 module.exports = mongoose.model('Reservation', ReservationSchema, "reservations");
