@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-const validator = require('validator');
 const e = require('cors');
-const { boolean } = require('joi');
+
 
 const catwaySchema = new mongoose.Schema({
     catwayNumber: {
