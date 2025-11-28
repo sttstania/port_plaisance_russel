@@ -1,16 +1,12 @@
-const User = require('../models/userModels');
+const User = require("../models/User");
 
 // Create a new user
-exports.createUser = async (req, res) => {
-    try {
-        const user = await this.addUser(req.body);
-        res.status(201).json(user);
-    } catch (error) {
-        res.status(400).json({ error: error.message });
-    }
-}
+exports.addUser = async (data) => {
+  const newUser = new User(data);
+  return await newUser.save();
+};
 
-// Get a user by ID
-exports.getUserById = async (userId) => {
-    return await User.findById(userId);
-};  
+// Fetch all users without password hashes
+exports.fetchAllUsers = async () => {
+  return await User.find({}, "-passwordHash").lean();
+};
