@@ -7,10 +7,6 @@ const app = express();
 // Middleware to parse JSON requests
 app.use(express.json());
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/russels-api')
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
 
 // Use routes with /api prefix 
 app.use('/api', indexRoutes);
