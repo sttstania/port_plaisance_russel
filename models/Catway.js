@@ -14,14 +14,13 @@ const catwaySchema = new mongoose.Schema({
         enum: ['short', 'long'],
     },
     catwayState: {
-        type: string,
+        type: String,
         required: [true, 'Catway state is required'],  
     },
 }, 
     { timestamps: true }
 );
 
-//Unique index on catwayNumber
-catwaySchema.index({ catwayNumber: 1 }, { unique: true, background: true });
+
 
 module.exports = mongoose.model('Catway', catwaySchema);
