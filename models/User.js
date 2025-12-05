@@ -17,7 +17,6 @@ const userSchema = new mongoose.Schema({
             validator: validator.isEmail,
             message: 'Please provide a valid email address'
         },
-        unique: true,
         lowercase: true,
         trim: true
     },
@@ -30,6 +29,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['user', 'admin'],
         default: 'user'
+    },
+    refreshToken: {
+        type: String,
+        default: null
     }
 }, 
     { timestamps: true }
